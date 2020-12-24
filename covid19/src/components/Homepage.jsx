@@ -11,10 +11,18 @@ import {
 function Homepage() {
   return (
     <div>
-      <Link to="/covid19"> Click to track</Link>
-      <Route exact path="/info">
-        <Covid19 />
-      </Route>
+      <Link to="/covid19"> click here to track</Link>
+      <br></br>
+      <Link to="/homepage"> Home Page</Link>
+      <Switch>
+        <Route exact path="/">
+          <Redirect to="/homepage" />
+        </Route>
+
+        <Route exact path="/covid19">
+          <Covid19 />
+        </Route>
+      </Switch>
     </div>
   );
 }
